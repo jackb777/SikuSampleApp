@@ -1,9 +1,11 @@
 package com.example.sikusampleapp
 
+import android.R.attr.value
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,7 +25,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.snapshots.SnapshotApplyResult
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -36,6 +37,7 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.bumptech.glide.integration.compose.placeholder
 import com.example.sikusampleapp.data.model.Country
+import com.example.sikusampleapp.ui.addcountry.AddCountryActivity
 import com.example.sikusampleapp.ui.model.Error
 import com.example.sikusampleapp.ui.model.Loading
 import com.example.sikusampleapp.ui.model.State
@@ -43,8 +45,9 @@ import com.example.sikusampleapp.ui.model.Success
 import com.example.sikusampleapp.ui.theme.SikuSampleAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<MainActivityViewModel>()
 
@@ -69,7 +72,8 @@ class MainActivity : ComponentActivity() {
 
 
     private fun openFragment() {
-
+        val intent = Intent(this, AddCountryActivity::class.java)
+        this.startActivity(intent)
     }
 }
 
