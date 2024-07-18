@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="add_country_card_view_radius">12dp</dimen>
+    <dimen name="add_country_card_view_min_height">300dp</dimen>
+
     <dimen name="standard_padding_margin">8dp</dimen>
     <dimen name="double_padding_margin">16dp</dimen>
     <dimen name="triple_padding_margin">24dp</dimen>
